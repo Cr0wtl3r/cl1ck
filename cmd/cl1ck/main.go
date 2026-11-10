@@ -254,14 +254,14 @@ func generateEvidence(f cli.Flags, printer *cli.Printer, res cli.Result, rawURL 
 					res.Notes = append(res.Notes, "browser refused to frame the target: "+ev.RefusalMessage)
 				case ev.TargetLoaded:
 					res.Classification = string(detect.ConfirmedFrameable)
-					res.Notes = append(res.Notes, "browser validation: cross-origin framing of the target observed")
+					res.Notes = append(res.Notes, "Browser validation: cross-origin framing of the target observed")
 					if err := os.Rename(pending, pngPath); err != nil {
 						printer.Warn("cannot keep screenshot evidence: %v", err)
 					} else {
 						res.ScreenshotFile = pngPath
 					}
 				default:
-					res.Notes = append(res.Notes, "browser validation inconclusive: no target response observed")
+					res.Notes = append(res.Notes, "Browser validation inconclusive: no target response observed")
 				}
 				if res.ScreenshotFile == "" {
 					os.Remove(pending)

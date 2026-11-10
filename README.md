@@ -51,7 +51,7 @@ cl1ck -u https://example.com --save --json
 
 ## Output
 
-- `evidencias/{domain}_{timestamp}.png` — screenshot of the PoC, kept only when browser validation confirms cross-origin framing (graceful degradation without a browser)
+- `evidencias/{domain}_{timestamp}.png` — screenshot of the PoC, kept only when Browser validation confirms cross-origin framing (graceful degradation without a browser)
 - `evidencias/{domain}_{timestamp}.html` — PoC page (`--save` or `--no-screenshot`)
 - `url_with_clickjacking.txt` — append-only list of frameable URLs (in the CWD)
 
