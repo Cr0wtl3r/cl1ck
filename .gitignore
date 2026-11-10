@@ -1,0 +1,23 @@
+# Build artifacts
+/cl1ck
+/cl1ck.exe
+*.test
+*.out
+
+# Runtime output (generated; may contain engagement data)
+/evidencias/
+/url_with_clickjacking.txt
+*.part
+
+# Go workspace files (local)
+/go.work
+/go.work.sum
+
+# Local/editor tooling
+/.commandcode/
+/.idea/
+/.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
