@@ -8,7 +8,7 @@ import (
 	"strings"
 	"time"
 
-	"cl1ck/internal/fetch"
+	"github.com/Cr0wtl3r/cl1ck/internal/fetch"
 )
 
 type Flags struct {

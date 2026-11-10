@@ -1,4 +1,4 @@
-module cl1ck
+module github.com/Cr0wtl3r/cl1ck
 
 go 1.27.3
 

@@ -8,23 +8,34 @@ import (
 	"net/url"
 	"os"
 	"path/filepath"
+	"runtime/debug"
 	"strings"
 	"time"
 
-	"cl1ck/internal/browser"
-	"cl1ck/internal/cli"
-	"cl1ck/internal/detect"
-	"cl1ck/internal/fetch"
-	"cl1ck/internal/poc"
-	"cl1ck/internal/serve"
+	"github.com/Cr0wtl3r/cl1ck/internal/browser"
+	"github.com/Cr0wtl3r/cl1ck/internal/cli"
+	"github.com/Cr0wtl3r/cl1ck/internal/detect"
+	"github.com/Cr0wtl3r/cl1ck/internal/fetch"
+	"github.com/Cr0wtl3r/cl1ck/internal/poc"
+	"github.com/Cr0wtl3r/cl1ck/internal/serve"
 )
 
 const (
-	version      = "0.1.0"
 	findingsFile = "url_with_clickjacking.txt"
 	timeDisplay  = "2006-01-02 15:04:05"
 	timeSlug     = "20060102_150405"
 )
+
+var version = buildVersion()
+
+func buildVersion() string {
+	if info, ok := debug.ReadBuildInfo(); ok {
+		if v := info.Main.Version; v != "" && v != "(devel)" {
+			return strings.TrimPrefix(v, "v")
+		}
+	}
+	return "0.1.0"
+}
 
 func main() {
 	os.Exit(run())

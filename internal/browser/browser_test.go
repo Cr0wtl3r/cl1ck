@@ -12,8 +12,8 @@ import (
 	"testing"
 	"time"
 
-	"cl1ck/internal/poc"
-	"cl1ck/internal/serve"
+	"github.com/Cr0wtl3r/cl1ck/internal/poc"
+	"github.com/Cr0wtl3r/cl1ck/internal/serve"
 )
 
 func runScreenshot(t *testing.T, targetHeaders func(http.Header), rewriteURL func(string) string) Evidence {

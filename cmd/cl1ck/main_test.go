@@ -3,8 +3,8 @@ package main
 import (
 	"testing"
 
-	"cl1ck/internal/cli"
-	"cl1ck/internal/detect"
+	"github.com/Cr0wtl3r/cl1ck/internal/cli"
+	"github.com/Cr0wtl3r/cl1ck/internal/detect"
 )
 
 func TestIsRedundantMissingNote(t *testing.T) {

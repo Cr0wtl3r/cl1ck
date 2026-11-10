@@ -7,6 +7,16 @@ CLI that scans targets for clickjacking exposure, classifies them honestly
 `INCONCLUSIVE`), generates a self-contained HTML PoC and validates cross-origin
 framing in a real browser, saving screenshot evidence.
 
+## Install
+
+Requires Go 1.27+.
+
+```sh
+go install github.com/Cr0wtl3r/cl1ck/cmd/cl1ck@latest
+```
+
+Make sure `$GOBIN` (or `$(go env GOPATH)/bin`) is in your `PATH`.
+
 ## Build
 
 ```sh
@@ -15,9 +25,9 @@ make check        # go vet + go test
 make test-browser # browser integration tests (needs Chromium/Chrome)
 ```
 
-Requires Go 1.27+. A Chromium/Chrome binary is needed only for screenshot
-evidence (`CLICK_BROWSER_PATH` overrides browser discovery); without one the
-scan continues and skips screenshots with a warning.
+A Chromium/Chrome binary is needed only for screenshot evidence
+(`CLICK_BROWSER_PATH` overrides browser discovery); without one the scan
+continues and skips screenshots with a warning.
 
 ## Usage
 
@@ -52,3 +62,7 @@ Only a real browser rendering the target cross-origin promotes a finding to
 `CONFIRMED FRAMEABLE`. `frame-ancestors *` and obsolete `X-Frame-Options:
 ALLOW-FROM` are treated as no effective protection; enforced CSP
 `frame-ancestors` governs over `X-Frame-Options` (modern browser semantics).
+
+## License
+
+MIT — see [LICENSE](LICENSE).
